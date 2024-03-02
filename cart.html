@@ -11,7 +11,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-
+<style>
+.normal{
+text-decoration:none;
+color:white;
+height:20px;
+width:20px;
+padding:10px 20px 10px 20px;
+background-color: #1cb5ab;
+}
+</style>
 <body>
     <section id="header">
         <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
@@ -22,7 +31,7 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a class="active"  href="cart.html">Cart</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </section>
@@ -80,7 +89,7 @@
             <h3>Apply Coupon</h3>
             <div>
                 <input type="text" placeholder="Enter Your Coupon">
-                <button class="normal">Apply</button>
+                <button class="norm">Apply</button>
             </div>
         </div>
         <div id="subtotal">
@@ -99,7 +108,7 @@
                     <td><strong> ₹ 3997 </strong></td>
                 </tr>
             </table>
-            <button class="normal">Proceed to Check Out</button>
+            <a class="normal" href="buy1.php">Proceed to Check Out</a>
         </div>
     </section>
     <footer class="section-p1">

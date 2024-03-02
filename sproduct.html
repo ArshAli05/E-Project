@@ -9,11 +9,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<style>
+.cart{
+    padding:10px 0 10px 20px;
+    background-color: rgb(127, 136, 144);
+    margin:-1600px 0 0 1100px;
+}
+   
+.toggle1{
+	
+	margin-left:70px;
+transform:translate(200%,100%) scale(1);
+transition:0.5s;
+}
+.add{
+    transform:translate(940%,95%) scale(1);
+    
+}
+</style>
 <body>
     <section id="header">
         <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
         <div>
+            <button class="add" onclick="toggle()">toggle</button>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="shop.html">Shop</a></li>
@@ -31,7 +49,7 @@
         </div>
         <div class="single-pro-details">
             <h6>Home / T-Shirt</h6>
-            <h4>Men's Fashion T Shirt</h4>
+            <h4 id="title">Men's Fashion T Shirt</h4>
             <h2>₹1499</h2>
             <select>
                 <option >Select Size</option>
@@ -42,11 +60,12 @@
                 <option >S</option>
             </select>
             <input type="number" value="1">
-            <button class="normal">Add To Cart</button>
+            <button class="normal" onclick="addToCart(1)">Add To Cart</button>
             <h4>Product Details</h4>
             <span>Heavyweight 5.3 oz / 180 gsm fabric, solid colors are 100% preshrunk cotton,heather grey is 90% cotton/10% polyester,denim heather is 50% cotton/ 50% polyester.
                 Male model shown is 6'0" / 183 cm tall and wearing size Medium
             </span>
+            
 
         </div>
     </section>
@@ -187,9 +206,14 @@
             </p>
         </div>
     </footer>
+    
+    
 
-
-    <script src="script.js"></script>
+    <script src="script.js">
+       
+    
+   
+    </script>
 </body>
 
 </html>

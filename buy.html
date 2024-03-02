@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Now Page</title>
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+img{
+    padding-left: 45px;
+}
+.addcart{
+    padding:10px 20px 10px 20px;
+    margin:20px 0 0 25px;
+    font-size:medium;
+    background-color: palevioletred;
+}
+.product{
+width:100%;
+height:100%;
+}
+.cartimg{
+    width:200px;
+}
+.cart{
+	
+	background:  #333;
+	color:white;
+	margin:-460px 0 0 -5000px;
+	border-radius:5px;
+	width:30%;
+	border:1px solid black;
+	transform:translate(200%,100%) scale(0);
+}
+.toggle1{
+	
+	margin-left:70px;
+transform:translate(200%,100%) scale(1);
+transition:0.5s;
+}
+h3,p{
+	margin-left:20px;
+}
+ul{
+	list-style:none;
+}
+
+.icon{
+	height:30px;
+	width:30px;
+	margin-left:600px;
+	transform:translate(0%,90%) scale(1);
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+.add{
+  transform:translate(0%,-1600%) scale(1);
+margin-left:365px;
+opacity:0;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.product-image {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-details {
+  width: 400px;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+  margin-right: 10px;
+}
+button{
+    margin:0 0 0 -10px;
+}
+.adcart,.buy[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adcart:hover,.buy[type="submit"]:hover {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+}
+.adcart{
+    margin-left:20px;
+}
+
+.quantity{
+  transform:translate(5%,-30%) scale(1);
+}
+.car{
+  height:30px;
+  width:30px;
+  margin-top:-475px;
+  margin-left:-200px
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Buy Now</h1>
+  </header>
+  <main>
+    <div class="product-image">
+      <img src="product.jpg" alt="Product Image">
+    </div>
+    <div class="product-details">
+      <h2 id="title">Funky Shirt</h2>
+      <p>Description of the product goes here.</p>
+      <p>Price: $10.00</p>
+        <div class="quantity">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+        </div>
+        <button type="submit" class="buy">Buy Now</button>
+        <button type="submit" class="adcart" onclick="addToCart(18)">Add to cart</button>
+        <button class="add" type="submit" onclick="toggle()">toggle</button>
+      
+    </div>
+    <img class="car" src="cart.jpg">
+  </main>
+  <div class="cart" id="cart">
+    <h3>Cart</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+  </div>
+  
+  <script>
+      let cartitem = [];
+
+function addToCart(pid) {
+	if(cartitem.includes(pid)){
+	alert("the product is already in cart");
+}	
+	else{
+		cartitem.push(pid);
+  const pname = document.getElementById("title").innerHTML;
+  const quantity = document.getElementById("quantity").value;
+  const price = 10.00; // Replace with actual product price
+  const subtotal = quantity * price;
+  
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  
+  const item = document.createElement("li");
+  item.innerText = `${pname} ${quantity}x $${subtotal.toFixed(2)}`;
+  
+  cartItems.appendChild(item);
+  
+  const total = parseFloat(cartTotal.innerText) + subtotal;
+  cartTotal.innerText = total.toFixed(2);
+  alert ("Product added to cart");
+}
+}
+
+var element=document.getElementById("cart");
+function toggle(){
+	
+	element.classList.toggle("toggle1");
+}
+  </script>
+</body>
+</html>
